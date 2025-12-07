@@ -12,4 +12,4 @@ A robust REST API implementing Double-Entry Bookkeeping principles for a mock ba
 ### Steps
 1. **Clone the repository:**
    ```bash
-   git clone <your-repo-url>
+   git clone <https://github.com/RAM-MEHER/Banking-Ledger-Challenge>
