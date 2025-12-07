@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "02873ff1-07bb-4ac2-a88e-1845e74b43af",
+		"name": "Banking Ledger Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50630539",
+		"_collection_link": "https://rammeher-6013450.postman.co/workspace/rammeher's-Workspace~5abfa455-bcd3-44b1-815c-7d823f5afbc6/collection/50630539-02873ff1-07bb-4ac2-a88e-1845e74b43af?action=share&source=collection_link&creator=50630539"
+	},
+	"item": [
+		{
+			"name": "Create Account (Alice)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"alice\",\r\n  \"type\": \"CHECKING\",\r\n  \"currency\": \"USD\",\r\n  \"status\": \"ACTIVE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Account (Bob)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"bob\",\r\n  \"type\": \"SAVINGS\",\r\n  \"currency\": \"USD\",\r\n  \"status\": \"ACTIVE\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit Money (Alice)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"accountId\": 1,\r\n  \"amount\": 100.00,\r\n  \"description\": \"Initial Funding\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deposits",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deposits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer (Alice -> Bob)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sourceAccountId\": 1,\r\n  \"destinationAccountId\": 2,\r\n  \"amount\": 50.00,\r\n  \"description\": \"Dinner Split\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/transfers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transfers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Balance (Alice)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/accounts/1/balance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts",
+						"1",
+						"balance"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
